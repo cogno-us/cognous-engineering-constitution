@@ -1,10 +1,10 @@
 # Cognous Engineering Orchestration
 
-Static execution practice under the [Engineering Constitution](ENGINEERING_CONSTITUTION.md). Coordinate already authorized work from contract readiness through independent qualification and verified integration. Reduce avoidable waiting, rework and operator interruptions without weakening authority, security, source integrity or independence. This document does not start a worker, configure a scheduler or authorize new work.
+Static execution practice under the [Engineering Constitution](ENGINEERING_CONSTITUTION.md), [foundational principles](PRINCIPLES.md) and [adoption rules](ADOPTION.md). Coordinate already authorized work from contract readiness through independent qualification and verified integration. Reduce avoidable waiting, rework and operator interruptions without weakening authority, security, source integrity or independence. This document does not start a worker, configure a scheduler or authorize new work.
 
 ## Roles and assignment discipline
 
-The **orchestrator** owns assignments, priorities, dependencies, authority records, capacity, review routing, completion gates, eligible integration and consolidated reporting. It cannot manufacture architectural authority or independent verdicts.
+The **orchestrator** coordinates authorized assignments, priorities, dependencies, authority records, capacity, review routing, completion gates, eligible integration and consolidated reporting. Its coordination does not create architectural authority, adoption standing or independent verdicts. The acts of proposing, inspecting, certifying and integrating remain separately attributable.
 
 The **implementation owner** owns contract reconciliation, implementation, developer regressions and exact-candidate handoff. The **independent qualification owner** owns specifications, fixtures, adapters, collectors, oracles, evidence and bounded qualification. Neither role gains authority over the other's scope merely through coordination. Independent protocol approval, exact-subject freeze, execution, review and verdict must be attributable; disclose missing independence rather than self-certifying.
 
@@ -19,7 +19,7 @@ Every assignment is self-contained:
 | Acceptance | Behavior, negative/adversarial controls, applicable independent battery and risk tier. |
 | Delivery | Branch/PR where applicable, exact final head, raw evidence and bounded handoff. |
 | Boundaries | Stop conditions, exclusions, downstream dependencies and next action. |
-| Governance | EP01–EP18, DOC-01 and applicable repository entry instructions. |
+| Governance | EP01–EP23, DOC-01 and applicable repository entry instructions. |
 
 Explicitly emphasize EP02's minimum sufficient implementation, EP04's independent expectations before acceptance, EP08's independently qualified outcome, EP09's safe parallelism and EP11's proactive blocker management. Where tools do not discover repository instructions automatically, include them in the assignment. Mutable status belongs in designated telemetry; preserve immutable history separately and run existing required document validation for governed changes.
 

@@ -2,7 +2,7 @@
 
 ## Scope, authority and roles
 
-EP01–EP18 and DOC-01 are the common adopted engineering rules. They govern execution, not the product architecture of any particular project. Apply platform and organizational security controls, explicit operator/task authority, the project's controlling architecture and recorded interpretations, these engineering articles, and applicable repository contracts. Repository prose cannot grant missing access, spending, external-effect, deployment or release authority.
+EP01–EP23 and DOC-01 set general engineering discipline under the [foundational principles](PRINCIPLES.md). They are static, secular guidance, not the architecture or implementation plan of a particular system. Applicability depends on an authorized adoption of an exact revision. Apply platform and organizational security controls, explicit operator/task authority, the project's controlling architecture and recorded interpretations, these engineering articles, and applicable repository contracts. Repository prose cannot grant missing access, spending, external-effect, deployment or release authority.
 
 The **implementation owner** reconciles contracts, implements the product and supplies developer validation and exact-source handoffs. **Independent qualification** owns expected outcomes, fixtures, oracles and qualification evidence. Implementation cannot self-certify independent qualification; qualification cannot fit its oracle to observed implementation behavior. Separately owned execution or infrastructure capabilities retain their own authority and qualification boundaries.
 
@@ -10,42 +10,46 @@ Use exact source and configuration identities. Preserve distinctions between dir
 
 ## Engineering articles
 
+The seven [foundational principles](PRINCIPLES.md) inform the duties below; the [adoption rules](ADOPTION.md) govern their revision and applicability.
+
 | Article | Required behavior | Prohibited shortcut | Validation |
 |---|---|---|---|
 | EP01 — Reuse Before Build | Inspect and reuse qualified, versioned components. | Duplicate an owned capability for convenience. | Reuse/source crosswalk. |
 | EP02 — Minimum Sufficient Implementation | Deliver the smallest complete authorized capability. | Speculative architecture, infrastructure, dependencies or scope expansion. | Authorization-to-diff review. |
-| EP03 — Contract Before Code | Identify source, boundary, obligations and acceptance before implementation. | Start against an unnamed or mutable contract. | Entry prerequisites. |
-| EP04 — Qualification Designed Before Acceptance | Independent expectations precede candidate acceptance; implementation and qualification remain separate. | Fit an oracle to implementation or substitute developer tests. | Independent pre-acceptance source/pin record. |
+| EP03 — Contract Before Code | Identify the controlling source, external reliance boundary, duties, expected acceptance and the authority by which a proposed change may acquire canonical standing. | Start against an unnamed or mutable contract. | Entry prerequisites. |
+| EP04 — Qualification Designed Before Acceptance | Distinguish implementation inspection, independent qualification, competent certification and final integration; preserve independence wherever required. | Fit an oracle to implementation or substitute developer tests. | Independent pre-acceptance source/pin record. |
 | EP05 — Fail Closed Without Inventing Policy | Apply specified conservative treatment and expose missing semantics. | Invent a cause, grant, floor, deadline, mapping or default. | Negative controls and source audit. |
-| EP06 — Preserve Original Evidence | Supplement history with corrections and distinct identities. | Delete, relabel, overwrite or silently rescore failures. | Immutable predecessor evidence. |
-| EP07 — Exact-Source Reproducibility | Bind claims to exact source, configuration and head. | Transfer a pass across revisions. | Exact-head manifest and review. |
+| EP06 — Preserve Original Evidence | Retain consequential decision ancestry, rejected alternatives, objections, adverse findings and supersession where legitimately relevant, subject to privacy and retention limits. | Delete, relabel, overwrite or silently rescore failures. | Immutable predecessor evidence. |
+| EP07 — Exact-Source Reproducibility | Bind claims to exact source, configuration, governing context and transition evidence; reconstruct authoritative pathways when deterministic execution replay is impossible. | Transfer a pass across revisions. | Exact-head manifest and review. |
 | EP08 — Independently Qualified Delivery | Optimize authorization-to-independently-qualified outcome; distinguish lifecycle evidence. | Treat PR counts, green CI or documents as delivery or qualification. | Honest PASS/FAIL/BLOCKED and stage timing; active hours remain unknown unless measured. |
 | EP09 — Safe Parallelism | Parallelize independent work against pins; serialize conflicting canonical contract, state, schema, admission and integration changes. | Concurrent conflicting authority mutations. | Ownership, pin and dependency review. |
 | EP10 — Autonomous Within Authority | Finish routine authorized work and eligible corrections and merges. | Assume new architectural, financial, security or release authority. | Authorization and merge audit. |
 | EP11 — Proactive Blocker Management | Check dependencies, resolve routine issues, redirect useful work and isolate one decision package. | Repeat planning loops or wait for routine continuation. | Designated blocker and next-action record. |
-| EP12 — No Unqualified Degradation | Preserve mandatory governance, quality and reliability floors. | Treat lower cost or fallback as equivalent. | Floor and negative-control evidence. |
+| EP12 — No Unqualified Degradation | Protect mandatory floors and legitimate external commitments during internal evolution; use explicit authorized compatibility transitions for justified changes. | Treat lower cost or fallback as equivalent. | Floor and negative-control evidence. |
 | EP13 — Observability Before Optimization | Measure baseline cost, latency, refusal, failure, retry, resources and acceptance. | Claim improvement from projection. | Reproducible measurement protocol. |
 | EP14 — Secure by Construction | Use least privilege, bounded environments and risk-proportionate assurance. | Treat CI or speculative counts as security qualification. | Enabled-path security review. |
 | EP15 — Bounded Changes and Reversible Integration | Keep changes reviewable with migration/rollback and recorded irreversible authority. | Bundle unrelated architecture or erase history. | Scope and migration review. |
 | EP16 — No Silent Claim Promotion | Separate proposed, documented, implemented, developer-tested, independently qualified, deployed and production-qualified. | Promote lifecycle labels or substitute them for project-defined claim statuses. | Claim/evidence review. |
-| EP17 — Decision Finality and Controlled Reopening | Implement a scoped authorized decision unless valid reopening grounds arise. | Reopen from preference or use finality to suppress a defect. | Decision record and reopening assessment. |
-| EP18 — Declarative Governance Rules, Constitutional Kernel | Keep policy/check metadata in a versioned authenticated registry, constitutional floors in the canonical kernel, and typed evaluator logic in code. | Unchecked mutable rule files, policy bypass, arbitrary scripting, a second kernel or invented conformance. | Registry/evaluator pins, negative and equivalence tests, independent qualification. |
+| EP17 — Decision Finality and Controlled Reopening | Preserve canonical decision finality while allowing bounded, reasoned challenge and authorized supersession without erasing alternative or adverse evidence. | Reopen from preference or use finality to suppress a defect. | Decision record and reopening assessment. |
+| EP18 — Governed Policy and Protected Invariants | Version, authenticate and review governance-critical policy and rule changes; protect established mandatory invariants against configuration override. | Treat unreviewed settings or evaluator changes as governing authority, weaken mandatory checks or introduce an unaccountable decision path. | Policy lineage, completeness, negative tests and proportionate independent review. |
+
+| EP19 — Canonical Integration | Distinguish proposal, inspection, acceptance and integration; only competent authority confers canonical standing. | Treat local success, generated output or merge mechanics as organizational adoption. | Traceable adoption and integration identity. |
+| EP20 — Scoped Delegation | Bind delegated work to actor, role, domain, action, context, time, limits and accountable issuer. | Treat technical capability or a subordinate assignment as general transferable authority. | Scope, expiry and revocation audit. |
+| EP21 — Boundary Commitments | Preserve relied-upon external semantics or obtain an explicit authorized compatibility transition. | Introduce silent contract, rights, evidence or interface regressions through internal refactoring. | Boundary-focused regression and migration review. |
+| EP22 — Reversible Possibility | Preserve proportionate lawful alternatives and permit justified challenge and supersession with ancestry. | Erase dissent or confuse decision rollback with reversal of a committed external effect. | Lineage and recovery review. |
+| EP23 — Accountable Certification | Separate contribution, inspection, qualification, certification and integration according to risk and governing independence requirements. | Self-certify generated work or treat nominal human involvement as sufficient authority. | Competence, identity, independence and accountability review. |
 
 EP17 requires authority, source, rationale, scope, version and qualification implications. Reopening is justified by new material evidence, demonstrated inconsistency, a constitutional or security defect, or explicit operator instruction. Corrections supplement rather than rewrite history. Finality must not suppress legitimate defects.
 
-Every orchestrator, worker and subordinate assignment applies EP01–EP18 and DOC-01 with source pins, bounded ownership, acceptance criteria and applicable gates. Adoption creates no architectural semantics and waives no independent qualification or execution boundary.
+Every authorized coordinator, worker and subordinate assignment applies the adopted EP01–EP23 and DOC-01 with source pins, bounded ownership, acceptance criteria and applicable gates. Adoption creates no architectural semantics and waives no independent qualification or execution boundary.
 
-## EP18: separation of governed rules, evaluators and mandatory floors
+## EP18: governed policy changes and protected invariants
 
-For governed policy evaluation, check membership, conditional applicability, reason codes, disposition mappings, required evidence and remediation are versioned registry data. Trusted registered typed evaluators remain code. The canonical kernel retains the immutable mandatory constitutional floor.
+Where an engineered system uses configurable governance rules, the rules and their authority, effective scope, version and provenance must be explicit, reviewable and reproducible. Mandatory invariants established by the controlling authority must not be weakened by settings, untrusted inputs, model outputs or an undeclared fallback.
 
-Derive the complete mandatory manifest deterministically from authenticated policy and the applicable project-defined class, profile and assurance inputs. Bind selected registry, policy and evaluator identities to the relevant context and decision records. No rule file, feature flag, caller, model, selected configuration or privileged setting can waive mandatory floors. Unknown, conflicting, unqualified, downgraded or missing rules and evaluators fail closed under the controlling contract.
+Implementations may use tables, typed evaluators, deterministic code, signed configuration or other suitable mechanisms; this constitution does not mandate a registry, a universal policy language, a canonical software kernel or any specific storage scheme. If an implementation separates rule data from evaluator code, it must preserve completeness, authenticity, unambiguous applicability, failure semantics and authorized activation.
 
-Registry activation remains governed policy mutation with authority, version/epoch, audit and preserved negative history. A bounded pinned startup profile is not a policy-change backdoor. Keep pure evaluators registered, versioned and typed; do not introduce arbitrary interpreted scripts, a second rules engine or a competing admission kernel.
-
-Preserve original registry versions, evaluator identities and inputs for historical replay. Evaluation under new policy is a distinct event, not a rewrite of an old decision. Shared terminology or registry correspondence never transfers external-effect permission or qualification.
-
-Acceptance requires a closed source-to-rule/check inventory, valid pinned registry, complete mandatory checks, invariant constitutional precedence, fail-closed invalid-registry behavior, replay/version binding, focused trust review and independent behavioral equivalence and refusal evidence. Green CI, text-only compatibility or historical pass transfer cannot replace independent acceptance. Project-specific schema, migration, profile and cutover decisions remain local.
+Historical evaluations retain the controlling policy/configuration and outcome identities. Reevaluation under changed policy is a new, distinguishable event, never retroactive alteration of the original. Material changes to governance logic require explicit source, impact analysis, suitable adversarial controls and independent qualification where warranted.
 
 ## Risk-proportionate review and allocation
 
