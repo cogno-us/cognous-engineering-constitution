@@ -3,7 +3,7 @@
 A secular, static, technology-neutral framework for governed engineering. It distinguishes **the right to propose a change** from **the authority to make it canonical** and protects provenance, justified reliance, independent assessment and accountable evolution.
 
 - [Foundational principles](PRINCIPLES.md) — operational legibility, canonical integration, scoped delegation, lineage, boundary commitments, reversible possibility and accountable certification.
-- [Engineering Constitution](ENGINEERING_CONSTITUTION.md) — EP01–EP23, risk-based reviews, evidence discipline and DOC-01.
+- [Engineering Constitution](ENGINEERING_CONSTITUTION.md) — EP01–EP23, risk-based reviews, evidence discipline.
 - [Engineering orchestration](ORCHESTRATION.md) — static practice for coordinating authorized work without acquiring authority over independent judgment.
 - [Adoption and amendment](ADOPTION.md) — version selection, competent adoption, amendment lineage, scope and compatibility.
 
