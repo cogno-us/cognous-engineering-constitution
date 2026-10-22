@@ -147,13 +147,13 @@ Keep lifecycle states distinct: proposed, documented, implemented, developer-tes
 
 ## Risk-proportionate review and allocation
 
-**Tier 1 is highest criticality; Tier 3 is lowest.** These are assurance and review classifications, **not a remediation queue**. A critical defect usually demands urgent containment, but scheduling must account for exploitability, consequences, affected users, dependencies, available mitigations and competent direction. Do not automatically fix Tier 3 items first simply because they are numbered third. Classify changes by the most consequential applicable risk. Review remains proportionate to consequences and does not displace governing obligations, required checks or decisions expressly reserved to competent authority.
+**Tier 1 is routine; Tier 3 is critical.** These are assurance and review classifications, **not a remediation queue**. Critical defects may demand urgent containment, but scheduling depends on impact, exploitability, dependencies, mitigations and competent direction. Classify changes by the most consequential applicable risk. Review remains proportionate to consequences and does not displace governing obligations, required checks or decisions expressly reserved to competent authority.
 
 | Tier | Scope | Required treatment |
 |---|---|---|
-| Tier 1 — critical | Authority, admission, security, trust, authentication, irreversible effects, atomic state, negative-evidence custody, or independent acceptance logic. | All applicable Tier 2 and Tier 3 controls, with focused independent review proportionate to the identified critical risk. Preserve explicitly reserved approval and authority boundaries. |
-| Tier 2 — substantive | Bounded implementation or behavior-changing engineering outside Tier 1 critical boundaries. | Developer regression tests, required automation, and independent qualification where applicable. Use additional code review where concrete risks warrant it. |
-| Tier 3 — routine | Documentation, metadata, formatting, and objectively nonsemantic changes. | Author self-validation and required automated checks. Independent review is not required unless a specific risk or governing rule demands it. |
+| Tier 1 — routine | Documentation, metadata, formatting, and objectively nonsemantic changes. | Author self-validation and required automated checks. Independent review is not required unless a specific risk or governing rule demands it. |
+| Tier 2 — substantive | Bounded implementation or behavior-changing engineering outside Tier 3 critical boundaries. | Developer regression tests, required automation, and independent qualification where applicable. Use additional code review where concrete risks warrant it. |
+| Tier 3 — critical | Authority, admission, security, trust, authentication, irreversible effects, atomic state, negative-evidence custody, or independent acceptance logic. | All applicable Tier 1 and Tier 2 controls, with focused independent review proportionate to the identified critical risk. Preserve explicitly reserved approval and authority boundaries. |
 
 Maximize useful nonconflicting work against exact pins; serialize shared canonical mutations. Assign concrete disjoint deliverables, not status-only turns. Avoid duplicate manifests, reviews and unchanged reruns. Coordinators consolidate concise milestone reporting in designated operational records.
 
