@@ -19,7 +19,7 @@ Every assignment is self-contained:
 | Acceptance | Behavior, negative/adversarial controls, applicable independent battery and risk tier. |
 | Delivery | Branch/PR where applicable, exact final head, raw evidence and bounded handoff. |
 | Boundaries | Stop conditions, exclusions, downstream dependencies and next action. |
-| Governance | EP01–EP23, DOC-01 and applicable repository entry instructions. |
+| Governance | EP01–EP23 and applicable repository entry instructions. |
 
 Explicitly emphasize EP02's minimum sufficient implementation, EP04's independent expectations before acceptance, EP08's independently qualified outcome, EP09's safe parallelism and EP11's proactive blocker management. Where tools do not discover repository instructions automatically, include them in the assignment. Mutable status belongs in designated telemetry; preserve immutable history separately and run existing required document validation for governed changes.
 
