@@ -1,6 +1,6 @@
 # Cognous Engineering Orchestration
 
-Static execution practice under the [Engineering Constitution](ENGINEERING_CONSTITUTION.md), [foundational principles](PRINCIPLES.md) and [adoption rules](ADOPTION.md). Coordinate already authorized work from contract readiness through independent qualification and verified integration. Reduce avoidable waiting, rework and operator interruptions without weakening authority, security, source integrity or independence. This document does not start a worker, configure a scheduler or authorize new work.
+Static execution practice under the [Engineering Constitution and Principles](ENGINEERING_CONSTITUTION.md) and [adoption rules](ADOPTION.md). Coordinate already authorized work from contract readiness through independent qualification and verified integration. Reduce avoidable waiting, rework and operator interruptions without weakening authority, security, source integrity or independence. This document does not start a worker, configure a scheduler or authorize new work.
 
 ## Roles and assignment discipline
 
@@ -19,9 +19,9 @@ Every assignment is self-contained:
 | Acceptance | Behavior, negative/adversarial controls, applicable independent battery and risk tier. |
 | Delivery | Branch/PR where applicable, exact final head, raw evidence and bounded handoff. |
 | Boundaries | Stop conditions, exclusions, downstream dependencies and next action. |
-| Governance | EP01–EP23 and applicable repository entry instructions. |
+| Governance | EP1–EP7 and CA01–CA23 and applicable repository entry instructions. |
 
-Explicitly emphasize EP02's minimum sufficient implementation, EP04's independent expectations before acceptance, EP08's independently qualified outcome, EP09's safe parallelism and EP11's proactive blocker management. Where tools do not discover repository instructions automatically, include them in the assignment. Mutable status belongs in designated telemetry; preserve immutable history separately and run existing required document validation for governed changes.
+Explicitly emphasize CA02's minimum sufficient implementation, CA04's independent expectations before acceptance, CA08's independently qualified outcome, CA09's safe parallelism and CA11's proactive blocker management. Where tools do not discover repository instructions automatically, include them in the assignment. Mutable status belongs in designated telemetry; preserve immutable history separately and run existing required document validation for governed changes.
 
 Before implementation, inspect reusable components, accessible exact sources, contract obligations, ownership, environment, independent oracle readiness and execution authority. Missing essential prerequisites become named blockers; continue independently ready authorized work.
 
@@ -73,7 +73,7 @@ Reuse existing harnesses, custody and reporting. The reusable flow is **Test spe
 
 Prepare expectations, fixtures, harness, profile and exact handoff before acceptance. Aim for oracle readiness ahead of implementation where feasible, claiming that readiness only when verified. Freeze expectations before qualification execution, bind the exact subject and execute only authorized profiles. Keep proposed tests, executable tests, developer validation, review, execution and accepted verdict distinct.
 
-Material changes to an oracle, fixture, threshold or evidence rule are Tier 3. Use one focused independent verifier as needed. Never change expected outcomes to make a candidate pass; correct genuine specification defects through sourced successors while preserving originals and escalating material reserved acceptance-rule changes.
+Material changes to an oracle, fixture, threshold or evidence rule are Tier 1 (critical). Use one focused independent verifier as needed. Never change expected outcomes to make a candidate pass; correct genuine specification defects through sourced successors while preserving originals and escalating material reserved acceptance-rule changes.
 
 Qualification covers applicable standalone contracts, refusal/failure, disabled/unavailable behavior, configuration eligibility, constitutional regressions, dependencies/interactions, provenance and functional and economic/latency claims. Use risk-based interactions rather than uncontrolled exhaustive combinations. A standalone pass does not establish interaction success; local/offline results do not establish real-environment or externally integrated qualification. Invalid adversarial fixtures are not operational bypasses.
 
@@ -83,7 +83,7 @@ Classify blockers by source, contract, architecture, security, implementation, o
 
 Resolve routine CI, packaging, links, approved dependency setup and nonconflicting integration issues autonomously. Do not invent policy to resolve architectural ambiguity. Consolidate material decisions into one packet with exact source, conflict/gap, supported interpretation, alternatives, recommendation, architectural and oracle implications and scoped impact/deferral. Distinguish source-resolved, engineering-choice, operator-decision and deferred items. Deferral needs an applicability boundary, not a waiver.
 
-Once documents are consistent and choices explicit, advance the executable handoff. Further documentation is justified by new material source evidence, demonstrated inconsistency, necessary executable interfaces or blocking security/constitutional defects. Do not repeat planning to restate old questions; preserve legitimate findings under EP17's reopening rule.
+Once documents are consistent and choices explicit, advance the executable handoff. Further documentation is justified by new material source evidence, demonstrated inconsistency, necessary executable interfaces or blocking security/constitutional defects. Do not repeat planning to restate old questions; preserve legitimate findings under CA17's reopening rule.
 
 Preserve raw failures, blocked cases and predecessor fixtures/freezes. Verify observation-to-raw-record links, pointer resolution, explicit derivations and checksums. Missing requirements remain visible; partial results must not conceal an observed integrity failure. Exercise applicable negative/fault controls independently.
 
@@ -102,7 +102,7 @@ Merge routine compliant changes within standing authority when all applicable ga
 5. Risk-tier-required review is complete, no blocking findings remain, and repository protections are satisfied.
 6. Integration creates no new work-package, spending, external-effect, deployment or release authority.
 
-Apply Tier 1 self-validation without independent agent review or post-merge audit; Tier 2 adds code review only for concrete risk; Tier 3 uses one focused verifier as needed. Do not fabricate approval from a comment or bypass repository rules. Recheck head, scope and evidence immediately before merging, with expected-head safeguards where supported. Changed heads require affected re-review/requalification. If native auto-merge is unavailable, use an authorized direct merge rather than assuming checks will merge it or changing settings by assumption.
+Apply Tier 3 routine self-validation without unnecessary independent review; Tier 2 requires applicable regressions and qualification; Tier 1 retains those requirements and adds focused independent assurance for the critical boundary. Do not fabricate approval from a comment or bypass repository rules. Recheck head, scope and evidence immediately before merging, with expected-head safeguards where supported. Changed heads require affected re-review/requalification. If native auto-merge is unavailable, use an authorized direct merge rather than assuming checks will merge it or changing settings by assumption.
 
 Verify the merge identity and intended content, record evidence in telemetry and reconcile dependencies. Continue the next already authorized ready task or prepare its decision package. Escalate reserved architectural/security/budget/external-effect/deployment/release/upstream or material acceptance-rule decisions; keep integration, qualification, release and deployment states distinct.
 
