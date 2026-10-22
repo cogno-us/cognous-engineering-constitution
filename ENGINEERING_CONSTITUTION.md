@@ -81,7 +81,7 @@ Every substantive assertion must distinguish authoritative source, relayed sourc
 
 ## Constitutional articles — CA01–CA23
 
-The constitutional articles translate the seven principles into specific obligations, prohibited shortcuts and validation expectations. Their substance and order are retained; **CA** distinguishes operationally testable articles from the seven **EP** principles. Historic references to article numbers CA01–CA23 refer to the corresponding CA01–CA23 under this revision.
+The constitutional articles translate the seven principles into specific obligations, prohibited shortcuts and validation expectations. Their substance and order are retained; **CA** distinguishes operationally testable articles from the seven **EP** principles. Historic references to article numbers EP01–EP23 correspond to CA01–CA23 in this revision; EP1–EP7 now designate the higher-level principles.
 
 | Article | Required behavior | Prohibited shortcut | Validation |
 |---|---|---|---|
