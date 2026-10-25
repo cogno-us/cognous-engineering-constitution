@@ -63,7 +63,7 @@ Run the **necessary affected negative, integration, failure-injection and advers
 
 ## Distinct application profiles
 
-**ISS Core / ISSBench.** During implementation emphasize eligible versus invalid evidence, authority/policy refusal, source and lineage preservation, canonical transitions, and fresh-process recovery. Independent cognitive preservation, compression, answer-quality and conformance testing belongs to the designated profile/milestone. Do not transfer a V1.1 pass to ISS Core or confuse emulator recovery with cloud durability.
+**Governed Cognition Runtime (GCR).** GCR denotes the generic architectural role of a governed cognitive runtime, not a particular proprietary implementation, repository, or qualification program. During implementation, emphasize eligible versus invalid evidence, authority/policy refusal, source and lineage preservation, canonical transitions, and fresh-process recovery. Independent cognitive preservation, compression, answer-quality and conformance testing belongs to the designated profile/milestone. Do not transfer a qualification pass between distinct GCR implementations or revisions, or confuse emulator recovery with cloud durability.
 
 **Cognous OCS / Stack Qualification.** During implementation exercise the impacted authorization-to-effect boundary, dispatch, revocation/race behavior, idempotency, refusal and reconciliation. Higher-consequence effects may require broader immediate regression and adversarial testing. Existing OCS security, publication and production holds, candidate-freeze requirements, and independent qualification obligations are unchanged.
 
