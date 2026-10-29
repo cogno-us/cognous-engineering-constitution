@@ -13,3 +13,7 @@ These texts state enduring guidance; they do not constitute an implementation pl
 Technical acceptance, independent qualification, canonical integration, institutional adoption and deployment are separate events. A merge, signature, automated verdict or publication does not collapse those distinctions.
 
 The documents are intentionally free of named implementation projects, product architectures and source-repository references. General examples never make a particular tool or platform mandatory.
+
+## License
+
+This repository is licensed under the [Apache License, Version 2.0](LICENSE).
