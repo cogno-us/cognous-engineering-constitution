@@ -41,6 +41,18 @@ Use supported tools and authorized environments before requesting setup. A trans
 
 Reassess scheduling at meaningful transitions and within an already configured supervisory reporting cycle. Deduplicate events and supplement monitoring with verified reads where needed. Do not imply unattended or scheduled execution unless a supported supervisor is actually configured. When no authorized work remains, prepare the next decision package rather than poll unproductively.
 
+## Batch architecture and evidence invariant
+
+For a multi-item migration, extraction or normalization sharing a schema, evaluator, enforcement boundary or inter-component contract, the implementation owner must **inventory the complete eligible set before item-by-item changes** and explicitly decide whether a common architecture-first batch is safer and less costly than incremental work. A numeric item count alone does not determine the correct approach; independent items with no shared mutable contract can remain incremental.
+
+Where a shared boundary would otherwise change repeatedly, follow the gated sequence: **(A) reconcile all in-scope inputs and freeze the proposed target schema, refusal semantics and cross-component contract before migration; (B) build and test the common loader/evaluator and negative controls against qualified representative fixtures; (C) migrate individual items in bounded, potentially parallel packages against that pinned boundary.** Architectural design/freeze and shared canonical writes have one designated owner. Data and adapter changes can be parallelized only after file ownership, dependency and contract boundaries are explicit. A planning or architecture freeze is not itself independent qualification or authority to modify a protected evaluator.
+
+During (C), no worker may silently widen or mutate the shared frozen schema, verifier or inter-component contract to accommodate an item. An encountered mismatch becomes a sourced compatibility/contract blocker with the affected item, concrete counterexample, proposed smallest alternatives, impact on existing evidence and a scoped Architect decision. A legitimate unforeseen requirement can reopen the architecture under CA17 and competent authority; the policy does not require rejecting valid legacy behavior or suppressing negative evidence to preserve a convenient freeze.
+
+**Fail-closed simplicity (CA02 + CA05):** reject malformed, unversioned, unknown or out-of-contract input at the designated boundary with the applicable deterministic refusal and preserved evidence. Do not create speculative coercion, recovery or fallback paths to accommodate inputs with no governing obligation. But protect source-supported compatibility obligations, hostile-input safety controls and proven reachable failure cases even when not exhaustively enumerated in the initial contract. Simplicity is not grounds to drop an invariant or refuse a previously guaranteed valid input without authorized compatibility change.
+
+Apply the [risk-tiered testing policy](TESTING_POLICY.md) to each phase and item; the shared architecture change may be T3, while later item migrations are classified by their **actual** authority and execution reachability, not automatically T1/T2. Reuse exact pinned common-boundary evidence where source/dependency applicability is proven; separately test each item's source-to-data equivalence, refusal behavior and affected integration. Preserve prescribed independent qualification and all repository gates.
+
 ## Dependencies, safe parallelism and capacity
 
 Maintain the project's existing dependency graph, predecessors/successors, blocking versus nonblocking edges, uncertain duration estimates and contribution to the next authorized milestone.

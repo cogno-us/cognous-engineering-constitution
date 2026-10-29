@@ -39,6 +39,12 @@ CI should be change-sensitive where repository policy permits: editorial-only ch
 
 CI optimization itself is a workflow/security change: assess its reachability and prove that branch protection, mandatory checks and relevant tests cannot be bypassed by misclassification, path filters, changed workflow files, renames or generated artifacts.
 
+### Shared-boundary evidence reuse for multi-item migrations
+
+When multiple migrations use a common evaluator/schema/contract, test and pin the common boundary before migrating individual items where feasible. A subsequent item may reuse prior *boundary* tests only after recording (1) the exact tested evaluator and contract identities and all relevant dependencies and environment, (2) byte or semantically justified identity of those boundary inputs at the new head, and (3) absence of new reachable interactions outside the earlier test scope. A zero diff in evaluator and contract files is **necessary in simple cases but not sufficient**: changed data, callers, dispatch, runtime wiring, authority state or configuration may invalidate the earlier evidence.
+
+Each migrated item still requires source-to-registered-data equivalence and refusal/negative tests, plus affected integration tests that establish the removal or replacement of its legacy hardcoded path did not alter externally observable decisions. Removing a hardcoded branch is a code and possibly execution-boundary change, **not automatically data-only or T1/T2**. Reclassify at T3 whenever authority, canonical state or enforcement reachability makes that appropriate; use T4 for any independently prescribed final qualification. An unforeseen schema incompatibility must use an explicit change-control gate rather than a hidden in-item schema amendment. Refer to [batch architecture and evidence invariant](ORCHESTRATION.md#batch-architecture-and-evidence-invariant).
+
 ## 5. PR evidence declaration
 
 Every substantive candidate includes a compact **CI Scope Declaration**, embedded in the PR or a linked durable record:
