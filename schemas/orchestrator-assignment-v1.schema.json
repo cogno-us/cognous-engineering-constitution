@@ -1,0 +1,476 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/cogno-us/cognous-engineering-constitution/blob/main/schemas/orchestrator-assignment-v1.schema.json",
+  "title": "Cognous orchestrator assignment packet v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "identity",
+    "authority",
+    "ownership",
+    "inputs",
+    "acceptance",
+    "delivery",
+    "boundaries",
+    "governance"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "cognous-orchestrator-assignment-v1"
+    },
+    "identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "workPackage",
+        "role",
+        "primaryArchetype",
+        "repository",
+        "baseCommitSha"
+      ],
+      "properties": {
+        "workPackage": {
+          "type": "string",
+          "minLength": 1
+        },
+        "role": {
+          "type": "string",
+          "minLength": 1
+        },
+        "primaryArchetype": {
+          "enum": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ]
+        },
+        "archetypeMeaning": {
+          "type": "string",
+          "minLength": 1
+        },
+        "repository": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$"
+        },
+        "baseCommitSha": {
+          "$ref": "#/$defs/sha"
+        },
+        "currentHeadSha": {
+          "$ref": "#/$defs/sha"
+        },
+        "targetPr": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "objective",
+        "sourceDecision",
+        "allowedActions",
+        "prohibitedActions",
+        "paidExecution"
+      ],
+      "properties": {
+        "objective": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sourceDecision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "allowedActions": {
+          "$ref": "#/$defs/strings"
+        },
+        "prohibitedActions": {
+          "$ref": "#/$defs/strings"
+        },
+        "paidExecution": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "authorized",
+            "maximumUsd"
+          ],
+          "properties": {
+            "authorized": {
+              "type": "boolean"
+            },
+            "maximumUsd": {
+              "type": "number",
+              "minimum": 0
+            },
+            "authorizationRef": {
+              "type": "string"
+            }
+          }
+        },
+        "mergeAuthorized": {
+          "type": "boolean"
+        },
+        "deploymentAuthorized": {
+          "type": "boolean"
+        }
+      }
+    },
+    "ownership": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "designatedWriter",
+        "writablePaths",
+        "protectedPaths"
+      ],
+      "properties": {
+        "designatedWriter": {
+          "type": "string",
+          "minLength": 1
+        },
+        "writablePaths": {
+          "$ref": "#/$defs/strings"
+        },
+        "protectedPaths": {
+          "$ref": "#/$defs/strings"
+        },
+        "parallelWorkers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "role",
+              "writablePaths"
+            ],
+            "properties": {
+              "role": {
+                "type": "string"
+              },
+              "writablePaths": {
+                "$ref": "#/$defs/strings"
+              }
+            }
+          }
+        }
+      }
+    },
+    "inputs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "projectPlan",
+        "frozenSources",
+        "interfacesAndDependencies"
+      ],
+      "properties": {
+        "projectPlan": {
+          "type": "string",
+          "minLength": 1
+        },
+        "frozenSources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/source"
+          },
+          "minItems": 1
+        },
+        "interfacesAndDependencies": {
+          "$ref": "#/$defs/strings"
+        },
+        "knownBaselineFailures": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "acceptance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "riskTier",
+        "riskRationale",
+        "successConditions",
+        "negativeControls",
+        "newEvidence",
+        "reusedEvidence",
+        "notRun",
+        "qualificationBoundary"
+      ],
+      "properties": {
+        "riskTier": {
+          "enum": [
+            "T0",
+            "T1",
+            "T2",
+            "T3",
+            "T4"
+          ]
+        },
+        "riskRationale": {
+          "type": "string",
+          "minLength": 1
+        },
+        "successConditions": {
+          "$ref": "#/$defs/strings"
+        },
+        "negativeControls": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "newEvidence": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "test",
+              "purpose"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "test": {
+                "type": "string",
+                "minLength": 1
+              },
+              "purpose": {
+                "type": "string",
+                "minLength": 1
+              },
+              "command": {
+                "type": "string"
+              },
+              "result": {
+                "enum": [
+                  "PLANNED",
+                  "PASS",
+                  "FAIL",
+                  "SKIPPED"
+                ]
+              }
+            }
+          }
+        },
+        "reusedEvidence": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "source",
+              "applicability"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "source": {
+                "$ref": "#/$defs/source"
+              },
+              "applicability": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "notRun": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "test",
+              "reason"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "test": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "qualificationBoundary": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "delivery": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifacts",
+        "reportFields"
+      ],
+      "properties": {
+        "artifacts": {
+          "$ref": "#/$defs/strings"
+        },
+        "reportFields": {
+          "$ref": "#/$defs/strings"
+        },
+        "pullRequest": {
+          "type": "string"
+        },
+        "finalHeadSha": {
+          "$ref": "#/$defs/sha"
+        }
+      }
+    },
+    "boundaries": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stopConditions",
+        "escalationOwner",
+        "outOfScope"
+      ],
+      "properties": {
+        "stopConditions": {
+          "$ref": "#/$defs/strings"
+        },
+        "escalationOwner": {
+          "type": "string",
+          "minLength": 1
+        },
+        "outOfScope": {
+          "$ref": "#/$defs/strings"
+        }
+      }
+    },
+    "governance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "constitutionalRevision",
+        "projectAdoption",
+        "complianceAddendumRevision",
+        "testingPolicyRevision",
+        "archetypeSource",
+        "clauses"
+      ],
+      "properties": {
+        "constitutionalRevision": {
+          "$ref": "#/$defs/sha"
+        },
+        "projectAdoption": {
+          "type": "object",
+          "required": [
+            "status",
+            "evidence"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "enum": [
+                "VERIFIED",
+                "UNVERIFIED",
+                "CONFLICT"
+              ]
+            },
+            "evidence": {
+              "type": "string",
+              "minLength": 1
+            },
+            "controllingRevision": {
+              "$ref": "#/$defs/sha"
+            }
+          }
+        },
+        "complianceAddendumRevision": {
+          "$ref": "#/$defs/sha"
+        },
+        "testingPolicyRevision": {
+          "$ref": "#/$defs/sha"
+        },
+        "archetypeSource": {
+          "type": "string",
+          "minLength": 1
+        },
+        "clauses": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "article",
+              "requiredBehavior",
+              "prohibitedShortcut",
+              "binding"
+            ],
+            "properties": {
+              "article": {
+                "type": "string",
+                "pattern": "^CA(0[1-9]|1[0-9]|2[0-3])$"
+              },
+              "requiredBehavior": {
+                "type": "string",
+                "minLength": 1
+              },
+              "prohibitedShortcut": {
+                "type": "string",
+                "minLength": 1
+              },
+              "binding": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "supplementalSources": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "sha": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{40}$"
+    },
+    "strings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "location",
+        "identity",
+        "purpose"
+      ],
+      "properties": {
+        "location": {
+          "type": "string",
+          "minLength": 1
+        },
+        "identity": {
+          "type": "string",
+          "minLength": 1
+        },
+        "purpose": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}
