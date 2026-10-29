@@ -8,6 +8,8 @@ The **orchestrator** coordinates authorized assignments, priorities, dependencie
 
 The **implementation owner** owns contract reconciliation, implementation, developer regressions and exact-candidate handoff. The **independent qualification owner** owns specifications, fixtures, adapters, collectors, oracles, evidence and bounded qualification. Neither role gains authority over the other's scope merely through coordination. Independent protocol approval, exact-subject freeze, execution, review and verdict must be attributable; disclose missing independence rather than self-certifying.
 
+Use the [task-scoped engineering compliance addendum](ENGINEERING_COMPLIANCE_ADDENDUM.md) when compiling the eight-field assignment packet: choose a role and task archetype, insert its exact constitutional clause slice verbatim, and add separate source-backed task bindings and testing obligations. Validate the selected constitutional revision; the default slice is not a ceiling on applicable law or controls. Do not claim deterministic injection unless the rendered text is mechanically checked against its source.
+
 Every assignment is self-contained:
 
 | Field | Content |
