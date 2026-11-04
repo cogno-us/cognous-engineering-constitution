@@ -17,3 +17,7 @@ The documents are intentionally free of named implementation projects, product a
 ## License
 
 This repository is licensed under the [Apache License, Version 2.0](LICENSE).
+
+## Reusable ChatGPT engineering governance skill
+
+A self-contained, derived skill is maintained under [`skills/cognous-engineering-governance/`](skills/cognous-engineering-governance/). It covers source-verified interpretation of EP1–EP7 and CA01–CA23, eight-field builder assignments, roles and archetypes A–D, risk-tiered testing and evidence, independent qualification, safe integration, adoption and amendments. See the [skill README](skills/cognous-engineering-governance/README.md) for installation, inventory, source-fidelity constraints and maintenance. **The skill is guidance, not authority:** its installation or repository inclusion does not constitute project adoption or grant any action, spending, merge, release, certification or deployment power. The exact adopted constitutional revision and controlling local requirements prevail.
